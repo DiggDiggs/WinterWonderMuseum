@@ -1,17 +1,8 @@
-# Welcome to Our Three.js Project!
+# React + Vite
 
-Hey there! 👋 This is our first attempt using [three.js](https://threejs.org/), and we're thrilled to see what creative wonders we can make together.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## Project Overview
+Currently, two official plugins are available:
 
-* **Objective:** Explore the capabilities of three.js and create engaging visual experiences.
-* **What is three.js?** [Three.js](https://threejs.org/) is a lightweight 3D library for the web, making it easy to create stunning 3D graphics in your browser.
-
-## Getting Started
-
-1. **Clone the Repository:**
-   ```bash
-   git clone https://Tribeoftech/Winterworkshop.git
-
- * **CD into your-repository**
- 
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh

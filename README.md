@@ -13,5 +13,5 @@ Hey there! 👋 This is our first attempt using [three.js](https://threejs.org/)
    ```bash
    git clone https://Tribeoftech/Winterworkshop.git
 
- * **cd your-repository:**
+ * **CD into your-repository**
  

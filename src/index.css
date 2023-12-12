@@ -182,10 +182,22 @@ body:has(.card[data-color="green"]:hover) {
     0.65vmin 1vmin #d2e4ff, 1vmin 0.65vmin #d2e4ff;
 }
 
+@keyframes gradientFlow {
+  0% {
+    background-position: 100% 0%;
+  }
+  100% {
+    background-position: -100% 0%;
+  }
+}
+
 .christmas-gradient-text {
-  background: linear-gradient(90deg, #00ff00, #ff0000);
+  background: linear-gradient(80deg, #00ff00, #ff0000, #2b77e7);
   -webkit-background-clip: text;
   color: transparent;
   font-size: 2em; /* Adjust the font size as needed */
   /* You can add other styles as needed */
+  background-size: 200% 100%;
+  animation: gradientFlow .6s linear infinite; /* Adjust the duration as needed */
 }
+

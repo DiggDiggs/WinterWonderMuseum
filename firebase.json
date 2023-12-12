@@ -1,10 +1,18 @@
 {
-  "hosting": {
-    "public": "OneDrive\\Desktop\\Holberton Projects\\Winterworkshop/dist",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ]
+    "hosting": {
+      "public": "\\OneDrive\\Desktop\\Holberton Projects\\Winterworkshop",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "predeploy": ["npm run build"]
+    }
   }
-}
+  

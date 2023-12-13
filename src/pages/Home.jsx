@@ -2,6 +2,8 @@ import { Suspense } from 'react'
 import { Canvas } from '@react-three/fiber'
 import Loader from '../components/Loader'
 
+import the_first_christmas_tree from '../models/the_first_christmas_tree';
+
   
         {/* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
             well gg m8
@@ -22,6 +24,8 @@ const Home = () => {
                 <pointLight />
                 <spotLight />
                 <hemisphereLight />
+
+                <the_first_christmas_tree />
             </Suspense>
         </Canvas>
     </section>

@@ -8,15 +8,18 @@ Title: The first Christmas tree
 
 import { useRef, useEffect } from "react";
 import { useGLTF } from "@react-three/drei";
-import { useFrame } from "@react-three/fiber";
+import { useFrame, useThree } from "@react-three/fiber";
 import { a } from '@react-spring/three'
 
-import the_first_christmas_treeScene from '../assets/3d/the_first_christmas_tree.glb ;
+import the_first_christmas_treeScene from '../assets/3d/the_first_christmas_tree.glb';
 
 const the_first_christmas_tree = (props) => {
-  const { nodes, materials } = useGLTF("/the_first_christmas_tree.glb");
+    const the_first_christmas_treeRef = useRef();
+
+  const { nodes, materials } = useGLTF("/the_first_christmas_treeScene");
+  
   return (
-    <a.group ref={the_first_christmas_tree} {...props}>
+    <a.group ref={the_first_christmas_treeRef} {...props}>
       <group position={[0.042, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0, 0.988, 0]} scale={[4.885, 3.981, 4.885]}>

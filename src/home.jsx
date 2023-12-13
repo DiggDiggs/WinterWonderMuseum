@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { Suspense } from "react";
+import Loader from "./components/Loader";
 
 const Home = () => {
   return (

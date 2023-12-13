@@ -15,7 +15,7 @@ import the_first_christmas_treeScene from '../assets/3d/the_first_christmas_tree
 const the_first_christmas_tree = (props) => {
   const { nodes, materials } = useGLTF("/the_first_christmas_tree.glb");
   return (
-    <group {...props} dispose={null}>
+    <a.group {...props} dispose={null}>
       <group position={[0.042, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>
         <group rotation={[Math.PI / 2, 0, 0]}>
           <group position={[0, 0.988, 0]} scale={[4.885, 3.981, 4.885]}>
@@ -3757,7 +3757,7 @@ const the_first_christmas_tree = (props) => {
           />
         </group>
       </group>
-    </group>
+    </a.group>
   );
 }
 

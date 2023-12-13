@@ -16,8 +16,8 @@ import the_first_christmas_treeScene from '../assets/3d/the_first_christmas_tree
 const the_first_christmas_tree = (props) => {
     const the_first_christmas_treeRef = useRef();
 
-  const { nodes, materials } = useGLTF("/the_first_christmas_treeScene");
-  
+  const { nodes, materials } = useGLTF(the_first_christmas_treeScene);
+
   return (
     <a.group ref={the_first_christmas_treeRef} {...props}>
       <group position={[0.042, 0, 0]} rotation={[-Math.PI / 2, 0, 0]}>

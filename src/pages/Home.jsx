@@ -1,35 +1,35 @@
-import { Suspense } from 'react'
-import { Canvas } from '@react-three/fiber'
-import Loader from '../components/Loader'
+import React, { Suspense } from 'react';
+import { Canvas } from '@react-three/fiber';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader';
+import { useLoader } from '@react-three/fiber';
 
-import the_first_christmas_tree from '../models/the_first_christmas_tree';
+import Loader from '../components/Loader';
 
-  
-        {/* <div className="absolute top-28 left-0 right-0 z-10 flex items-center justify-center">
-            well gg m8
+const ChristmasTreeModel = () => {
+  const gltf = useLoader(GLTFLoader, '/path/to/the_first_christmas_tree.glb');
 
-  </div>*/}
-
+  return <primitive object={gltf.scene} />;
+};
 
 const Home = () => {
   return (
     <section className="w-full h-screen relative">
-        <Canvas 
-            className="w-full h-screen bg-transparent"
-            camera={{ near: 0.1, far: 1000}}
-        >
-            <Suspense fallback={<Loader />}>
-                <directionalLight />
-                <ambientLight />
-                <pointLight />
-                <spotLight />
-                <hemisphereLight />
+      <Canvas
+        className="w-full h-screen bg-transparent"
+        camera={{ near: 0.1, far: 1000 }}
+      >
+        <Suspense fallback={<Loader />}>
+          <directionalLight />
+          <ambientLight />
+          <pointLight />
+          <spotLight />
+          <hemisphereLight />
 
-                <the_first_christmas_tree />
-            </Suspense>
-        </Canvas>
+          <ChristmasTreeModel />
+        </Suspense>
+      </Canvas>
     </section>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

@@ -5,6 +5,7 @@ import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Sky from '../models/Sky';
 import Chris from '../models/Chris';
 import Elk_Wip from '../models/Elk_Wip';
+import Dom from '../models/dom3d';
 
 
 // Home component
@@ -44,6 +45,7 @@ const Home = () => {
           />
           <Elk_Wip />
           <Chris />
+          <Dom />
         </Suspense>
       </Canvas>
     </section>

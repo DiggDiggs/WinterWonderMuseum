@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 const Bear = () => {
     const { scene, animations } = useGLTF(bearScene);
   return (
-    <mesh position={[1.5, -1.5, -8]} scale={[.1, .1, .03]}>
+    <mesh position={[1.55, -1.3, -8]} scale={[.8, .8, .03]}>
       <primitive object={scene} />
 
     </mesh>

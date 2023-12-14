@@ -3,6 +3,8 @@ import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Sky from '../models/Sky';
+import Chris from '../models/Chris';
+import Elk_Wip from '../models/Elk_Wip';
 
 
 // Home component
@@ -32,12 +34,16 @@ const Home = () => {
           <spotLight />
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
+          
+          
           <Sky />
           <The_First_Christmas_Tree 
             position={The_First_Christmas_TreePosition}
             scale={The_First_Christmas_TreeScale}
             rotation={The_First_Christmas_TreeRotation}
           />
+          <Elk_Wip />
+          <Chris />
         </Suspense>
       </Canvas>
     </section>

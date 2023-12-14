@@ -6,6 +6,7 @@ import Sky from '../models/Sky';
 import Chris from '../models/Chris';
 import Elk_Wip from '../models/Elk_Wip';
 import Dom from '../models/dom3d';
+import Bear from '../models/Bear_igloo';
 
 
 // Home component
@@ -46,6 +47,7 @@ const Home = () => {
           <Elk_Wip />
           <Chris />
           <Dom />
+          <Bear />
         </Suspense>
       </Canvas>
     </section>

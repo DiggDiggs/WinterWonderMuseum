@@ -6,7 +6,7 @@ import { useGLTF } from '@react-three/drei';
 const Chris = () => {
     const { scene, animations } = useGLTF(chrisScene);
   return (
-    <mesh position={[-5, 2, 1]} scale={[0.1, 0.1,.003]}>
+    <mesh position={[-1, -1, 1]} scale={[.3, 0.3,.003]}>
         <primitive object={scene} />
 
     </mesh>

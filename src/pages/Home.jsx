@@ -6,7 +6,11 @@ import Sky from '../models/Sky';
 import Chris from '../models/Chris';
 import Elk_Wip from '../models/Elk_Wip';
 import Dom from '../models/dom3d';
+<<<<<<< HEAD
 import Bear from '../models/Bear_igloo';
+=======
+import Alex from '../models/Alex';
+>>>>>>> 0d6e5888f3caa975e1ad02c614e4a40f97a4d169
 
 
 // Home component
@@ -46,6 +50,7 @@ const Home = () => {
           />
           <Elk_Wip />
           <Chris />
+          <Alex />
           <Dom />
           <Bear />
         </Suspense>

@@ -1,20 +1,19 @@
-import { Suspense } from 'react';
+import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Sky from '../models/Sky';
 import Chris from '../models/Chris';
-import Elk_Wip from '../models/Elk_Wip';
 import Dom from '../models/dom3d';
-<<<<<<< HEAD
 import Bear from '../models/Bear_igloo';
-=======
 import Alex from '../models/Alex';
->>>>>>> 0d6e5888f3caa975e1ad02c614e4a40f97a4d169
 
 
 // Home component
 const Home = () => {
+  const [isRotating, setIsRotating] = useState(false);
+
+
   const adjustThe_First_Christmas_TreeForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43.4];
@@ -32,7 +31,7 @@ const Home = () => {
   const [The_First_Christmas_TreeScale, The_First_Christmas_TreePosition, The_First_Christmas_TreeRotation] = adjustThe_First_Christmas_TreeForScreenSize();
   return (
     <section className="w-full h-screen relative">
-      <Canvas className="w-full h-screen bg-transparent" camera={{ near: 0.1, far: 1000 }}>
+      <Canvas className={`w-full h-screen bg-transparent" ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
@@ -47,8 +46,9 @@ const Home = () => {
             position={The_First_Christmas_TreePosition}
             scale={The_First_Christmas_TreeScale}
             rotation={The_First_Christmas_TreeRotation}
+            isRotating={isRotating}
+            setIsRotating={setIsRotating}
           />
-          <Elk_Wip />
           <Chris />
           <Alex />
           <Dom />

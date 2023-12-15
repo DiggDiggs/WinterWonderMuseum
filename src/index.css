@@ -195,7 +195,7 @@ body:has(.card[data-color="green"]:hover) {
   background: linear-gradient(80deg, #00ff00, #ff0000, #2b77e7);
   -webkit-background-clip: text;
   color: transparent;
-  font-size: 2em; /* Adjust the font size as needed */
+  font-size: 1.25em; /* Adjust the font size as needed */
   /* You can add other styles as needed */
   background-size: 200% 100%;
   animation: gradientFlow .6s linear infinite; /* Adjust the duration as needed */

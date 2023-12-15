@@ -1,13 +1,14 @@
-import { Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Suspense } from 'react';
 import Loader from '../components/Loader';
-import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
-import Sky from '../models/Sky';
+import Alex from '../models/Alex';
+import Bear from '../models/Bear_igloo';
 import Chris from '../models/Chris';
 import Elk_Wip from '../models/Elk_Wip';
+import Mail from '../models/Mail';
+import Sky from '../models/Sky';
+import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Dom from '../models/dom3d';
-import Bear from '../models/Bear_igloo';
-import Alex from '../models/Alex';
 
 
 // Home component
@@ -50,6 +51,7 @@ const Home = () => {
           <Alex />
           <Dom />
           <Bear />
+          <Mail />
         </Suspense>
       </Canvas>
     </section>

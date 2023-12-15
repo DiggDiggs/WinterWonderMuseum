@@ -8,6 +8,7 @@ import Elk_Wip from '../models/Elk_Wip';
 import Dom from '../models/dom3d';
 import Bear from '../models/Bear_igloo';
 import Alex from '../models/Alex';
+import Dragon from '../models/dragon';
 
 
 // Home component
@@ -38,7 +39,7 @@ const Home = () => {
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
           
-          
+          <Dragon />
           <Sky />
           <The_First_Christmas_Tree 
             position={The_First_Christmas_TreePosition}

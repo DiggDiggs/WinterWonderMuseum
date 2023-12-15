@@ -7,6 +7,7 @@ import Chris from '../models/Chris';
 import Dom from '../models/dom3d';
 import Bear from '../models/Bear_igloo';
 import Alex from '../models/Alex';
+import Whey from '../models/Whey';
 
 
 // Home component
@@ -28,8 +29,25 @@ const Home = () => {
     return [screenScale, screenPosition, rotation];
   }
 
+  const adjustWheyForScreenSize = () => {
+    let screenScale, screenPosition;
+  
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1.5, 0];
+    } else {
+      screenScale = [3, 3, 3];
+      screenPosition = [0, -4, -4];
+    }
+  
+    return [screenScale, screenPosition];
+  }
+  
   const [The_First_Christmas_TreeScale, The_First_Christmas_TreePosition, The_First_Christmas_TreeRotation] = adjustThe_First_Christmas_TreeForScreenSize();
+  const [wheyScale, wheyPosition] = adjustWheyForScreenSize();
   return (
+  
+
     <section className="w-full h-screen relative">
       <Canvas className={`w-full h-screen bg-transparent" ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
         <Suspense fallback={<Loader />}>
@@ -53,6 +71,12 @@ const Home = () => {
           <Alex />
           <Dom />
           <Bear />
+          <Whey
+            isRotating={isRotating}
+            wheyScale={wheyScale}
+            wheyPosition={wheyPosition}
+            rotation={[0, 20, 0]}
+          />
         </Suspense>
       </Canvas>
     </section>

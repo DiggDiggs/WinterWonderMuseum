@@ -1,25 +1,14 @@
-<<<<<<< HEAD
 import { useState, Suspense } from 'react';
-=======
->>>>>>> 220e3968341559c59fb53cdb159f6fb71a4e9555
 import { Canvas } from '@react-three/fiber';
-import { Suspense } from 'react';
 import Loader from '../components/Loader';
 import Alex from '../models/Alex';
-import Bear from '../models/Bear_igloo';
 import Chris from '../models/Chris';
-<<<<<<< HEAD
 import Dom from '../models/dom3d';
 import Bear from '../models/Bear_igloo';
-import Alex from '../models/Alex';
 import Whey from '../models/Whey';
-=======
-import Elk_Wip from '../models/Elk_Wip';
 import Mail from '../models/Mail';
 import Sky from '../models/Sky';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
-import Dom from '../models/dom3d';
->>>>>>> 220e3968341559c59fb53cdb159f6fb71a4e9555
 
 
 // Home component

@@ -5,15 +5,11 @@ import Alex from '../models/Alex';
 import Chris from '../models/Chris';
 import Dom from '../models/dom3d';
 import Bear from '../models/Bear_igloo';
-<<<<<<< HEAD
-import Alex from '../models/Alex';
 import Dragon from '../models/dragon';
-=======
 import Whey from '../models/Whey';
 import Mail from '../models/Mail';
 import Sky from '../models/Sky';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
->>>>>>> 187cc95f195a147d1e7cd21d234fa8552b63fd2f
 
 
 // Home component

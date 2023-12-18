@@ -12,6 +12,14 @@ import Sky from '../models/Sky';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 
 
+const IslandGroup = ({ children, rotation }) => {
+  return (
+    <group rotation={rotation}>
+      {children}
+    </group>
+  );
+};
+
 // Home component
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
@@ -20,7 +28,9 @@ const Home = () => {
   const adjustThe_First_Christmas_TreeForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43.4];
+    /*
     let rotation = [0.1, 4.7, 0];
+    */
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
@@ -59,27 +69,28 @@ const Home = () => {
           <spotLight />
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
-          
-          <Dragon />
-          <Sky />
-          <The_First_Christmas_Tree 
-            position={The_First_Christmas_TreePosition}
-            scale={The_First_Christmas_TreeScale}
-            rotation={The_First_Christmas_TreeRotation}
-            isRotating={isRotating}
-            setIsRotating={setIsRotating}
-          />
-          <Chris />
-          <Alex />
-          <Dom />
-          <Bear />
-          <Whey
-            isRotating={isRotating}
-            wheyScale={wheyScale}
-            wheyPosition={wheyPosition}
-            rotation={[0, 20, 0]}
-          />
-          <Mail />
+          <IslandGroup rotation={isRotating ? [0, 0.1, 0] : [0, 0, 0]}>
+            <Dragon />
+            <Sky />
+            <The_First_Christmas_Tree 
+              position={The_First_Christmas_TreePosition}
+              scale={The_First_Christmas_TreeScale}
+              rotation={The_First_Christmas_TreeRotation}
+              isRotating={isRotating}
+              setIsRotating={setIsRotating}
+            />
+            <Chris />
+            <Alex />
+            <Dom />
+            <Bear />
+            <Whey
+              isRotating={isRotating}
+              wheyScale={wheyScale}
+              wheyPosition={wheyPosition}
+              rotation={[0, 20, 0]}
+            />
+            <Mail />
+          </IslandGroup>
         </Suspense>
       </Canvas>
     </section>

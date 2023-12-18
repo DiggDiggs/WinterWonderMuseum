@@ -2,7 +2,7 @@ import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
 import Loader from '../components/Loader';
 import Alex from '../models/Alex';
-import Chris from '../models/Chris';
+//import Chris from '../models/Chris';
 import Dom from '../models/dom3d';
 import Bear from '../models/Bear_igloo';
 import Dragon from '../models/dragon';
@@ -38,7 +38,7 @@ const Home = () => {
       screenScale = [1, 1, 1];
     }
 
-    return [screenScale, screenPosition, rotation];
+    return [screenScale, screenPosition];
   }
 
   const adjustWheyForScreenSize = () => {

@@ -92,7 +92,7 @@ const Home = () => {
               isRotating={isRotating}
               chrisScale={chrisScale}
               chrisPosition={chrisPosition}
-              rotation={[0, 10, 0]}
+              rotation={[0, 0, 0]}
             />
             <Alex />
             <Dom />

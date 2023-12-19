@@ -20,17 +20,12 @@ const IslandGroup = ({ children, rotation }) => {
   );
 };
 
-// Home component
 const Home = () => {
   const [isRotating, setIsRotating] = useState(false);
-
 
   const adjustThe_First_Christmas_TreeForScreenSize = () => {
     let screenScale = null;
     let screenPosition = [0, -6.5, -43.4];
-    /*
-    let rotation = [0.1, 4.7, 0];
-    */
 
     if (window.innerWidth < 768) {
       screenScale = [0.9, 0.9, 0.9];
@@ -43,7 +38,7 @@ const Home = () => {
 
   const adjustWheyForScreenSize = () => {
     let screenScale, screenPosition;
-  
+
     if (window.innerWidth < 768) {
       screenScale = [1.5, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
@@ -51,17 +46,31 @@ const Home = () => {
       screenScale = [3, 3, 3];
       screenPosition = [0, -4, -4];
     }
-  
+
     return [screenScale, screenPosition];
   }
-  
+
+  const adjustChrisForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1.5, 0];
+    } else {
+      screenScale = [3, 3, 3];
+      screenPosition = [0, -4, -4];
+    }
+
+    return [screenScale, screenPosition];
+  }
+
   const [The_First_Christmas_TreeScale, The_First_Christmas_TreePosition, The_First_Christmas_TreeRotation] = adjustThe_First_Christmas_TreeForScreenSize();
   const [wheyScale, wheyPosition] = adjustWheyForScreenSize();
-  return (
-  
+  const [chrisScale, chrisPosition] = adjustChrisForScreenSize();
 
+  return (
     <section className="w-full h-screen relative">
-      <Canvas className={`w-full h-screen bg-transparent" ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
+      <Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />
@@ -72,14 +81,19 @@ const Home = () => {
           <IslandGroup rotation={isRotating ? [0, 0.1, 0] : [0, 0, 0]}>
             <Dragon />
             <Sky />
-            <The_First_Christmas_Tree 
+            <The_First_Christmas_Tree
               position={The_First_Christmas_TreePosition}
               scale={The_First_Christmas_TreeScale}
               rotation={The_First_Christmas_TreeRotation}
               isRotating={isRotating}
               setIsRotating={setIsRotating}
             />
-            <Chris />
+            <Chris
+              isRotating={isRotating}
+              chrisScale={chrisScale}
+              chrisPosition={chrisPosition}
+              rotation={[0, 10, 0]}
+            />
             <Alex />
             <Dom />
             <Bear />

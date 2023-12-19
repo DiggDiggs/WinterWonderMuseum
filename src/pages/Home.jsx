@@ -80,7 +80,7 @@ const Home = () => {
 
           <IslandGroup rotation={isRotating ? [0, 0.1, 0] : [0, 0, 0]}>
             <Dragon />
-            <Sky />
+            <Sky isRotating={isRotating} />
             <The_First_Christmas_Tree
               position={The_First_Christmas_TreePosition}
               scale={The_First_Christmas_TreeScale}

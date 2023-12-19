@@ -105,8 +105,8 @@ const Home = () => {
             />
              <Alex 
              isRotating={isRotating}
-             chrisScale={chrisScale}
-             chrisPosition={chrisPosition}
+             alexScaleScale={alexScale}
+             alexPosition={alexPosition}
              rotation={[0, 0, 0]} />
             <Chris
               isRotating={isRotating}

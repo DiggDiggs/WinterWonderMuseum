@@ -22,19 +22,17 @@ const Whey = ({ isRotating, ...props }) => {
 
   useEffect(() => {
     // Ensure that the action exists before attempting to play or stop it
-    const take001Action = actions['take 001'];
-
-    if (take001Action) {
+    if (actions && actions["Take 001"]) {
       if (isRotating) {
-        take001Action.play();
+        actions["Take 001"].play();
       } else {
-        take001Action.stop();
+        actions["Take 001"].stop();
       }
     }
   }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={ref}>
+    <mesh {...props} ref={ref} position={[2, -2, 3]} scale={[1, 1, 1]}>
       <primitive object={scene} />
     </mesh>
   );

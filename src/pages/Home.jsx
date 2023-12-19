@@ -87,7 +87,7 @@ const Home = () => {
               isRotating={isRotating}
               wheyScale={wheyScale}
               wheyPosition={wheyPosition}
-              rotation={[0, 20, 0]}
+              rotation={[0, 10, 0]}
             />
             <Mail />
           </IslandGroup>

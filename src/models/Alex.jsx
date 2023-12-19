@@ -2,7 +2,7 @@ import { useAnimations, useGLTF } from '@react-three/drei';
 import React, { useEffect, useRef } from 'react';
 import alexScene from '../assets/3d/dshoot1_default.glb';
 
-const Alex = () => {
+const Alex = ({ isRotating, ...props }) => {
     const { scene, animations } = useGLTF(alexScene);
     const ref = useRef();
     const { actions } = useAnimations(animations, ref);

@@ -1,15 +1,15 @@
-import { useState, Suspense } from 'react';
 import { Canvas } from '@react-three/fiber';
+import { Suspense, useState } from 'react';
 import Loader from '../components/Loader';
-import Alex from '../models/Alex';
-import Chris from '../models/Chris.jsx';
-import Dom from '../models/dom3d';
+import Alex from '../models/Alex.jsx';
 import Bear from '../models/Bear_igloo';
-import Dragon from '../models/dragon';
-import Whey from '../models/Whey';
+import Chris from '../models/Chris.jsx';
 import Mail from '../models/Mail';
 import Sky from '../models/Sky';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
+import Whey from '../models/Whey';
+import Dom from '../models/dom3d';
+import Dragon from '../models/dragon';
 
 
 const IslandGroup = ({ children, rotation }) => {
@@ -63,10 +63,25 @@ const Home = () => {
 
     return [screenScale, screenPosition];
   }
+  const adjustAlexForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [1, -2, 1];
+    } else {
+      screenScale = [3, 3, 3];
+      screenPosition = [1, -1, -1];
+    }
+
+    return [screenScale, screenPosition];
+  }
+
 
   const [The_First_Christmas_TreeScale, The_First_Christmas_TreePosition, The_First_Christmas_TreeRotation] = adjustThe_First_Christmas_TreeForScreenSize();
   const [wheyScale, wheyPosition] = adjustWheyForScreenSize();
   const [chrisScale, chrisPosition] = adjustChrisForScreenSize();
+  const [alexScale, alexPosition] = adjustAlexForScreenSize();
 
   return (
     <section className="w-full h-screen relative">
@@ -88,13 +103,17 @@ const Home = () => {
               isRotating={isRotating}
               setIsRotating={setIsRotating}
             />
+             <Alex 
+             isRotating={isRotating}
+             chrisScale={chrisScale}
+             chrisPosition={chrisPosition}
+             rotation={[0, 0, 0]} />
             <Chris
               isRotating={isRotating}
               chrisScale={chrisScale}
               chrisPosition={chrisPosition}
               rotation={[0, 0, 0]}
             />
-            <Alex />
             <Dom />
             <Bear />
             <Whey

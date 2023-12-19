@@ -6,6 +6,7 @@ const Alex = () => {
     const { scene, animations } = useGLTF(alexScene);
     const ref = useRef();
     const { actions } = useAnimations(animations, ref);
+    
     useEffect(() => {
       const onAnimationLoad = () => {
         console.log('Model and animations are loaded:', animations);
@@ -19,11 +20,11 @@ const Alex = () => {
     }, [ref, animations]);
   
     useEffect(() => {
-      if (actions && actions["dshoot1_default.glb"]) {
+      if (actions && actions["dshoot1_d"]) {
         if (isRotating) {
-          actions["dshoot1_default.glb"].play();
+          actions["dshoot1_d"].play();
         } else {
-          actions["dshoot1_default.glb"].stop();
+          actions["dshoot1_d"].stop();
         }
       }
     }, [actions, isRotating]);

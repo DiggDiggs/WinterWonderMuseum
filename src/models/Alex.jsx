@@ -11,23 +11,29 @@ const Alex = ({ isRotating, ...props }) => {
       const onAnimationLoad = () => {
         console.log('Model and animations are loaded:', animations);
       };
-  
-      ref.current.addEventListener('model-loaded', onAnimationLoad);
-  
+    
+      const currentRef = ref.current;
+    
+      if (currentRef) {
+        currentRef.addEventListener('model-loaded', onAnimationLoad);
+      }
+    
       return () => {
-        ref.current.removeEventListener('model-loaded', onAnimationLoad);
+        if (currentRef) {
+          currentRef.removeEventListener('model-loaded', onAnimationLoad);
+        }
       };
-    }, [ref, animations]);
+    }, [ref, animations]); 
   
     useEffect(() => {
-      if (actions && actions["dshoot1_d"]) {
+      if (actions && actions["dshoot1"] && actions["dshoot1"].play && actions["dshoot1"].stop) {
         if (isRotating) {
-          actions["dshoot1_d"].play();
+          actions["dshoot1"].play();
         } else {
-          actions["dshoot1_d"].stop();
+          actions["dshoot1"].stop();
         }
       }
-    }, [actions, isRotating]);
+    }, [actions, isRotating]); 
   
     return (
       <mesh {...props} position={[-1, -2, -3]} scale={[.5, .5,.5]}>

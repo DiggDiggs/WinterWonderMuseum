@@ -8,8 +8,8 @@ import Chris from '../models/Chris.jsx';
 import Mail from '../models/Mail';
 import Sky from '../models/Sky';
 import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
-import Whey from '../models/Whey';
 import Dom from '../models/dom3d';
+import Whey from '../models/Whey';
 import Dragon from '../models/dragon';
 
 
@@ -69,6 +69,19 @@ const Home = () => {
 
     return [screenScale, screenPosition];
   }
+  const adjustDomForScreenSize = () => {
+    let screenScale, screenPosition;
+
+    if (window.innerWidth < 768) {
+      screenScale = [1.5, 1.5, 1.5];
+      screenPosition = [0, -1, 0];
+    } else {
+      screenScale = [3, 3, 3];
+      screenPosition = [5, -3, -3];
+    }
+
+    return [screenScale, screenPosition];
+  }
   const adjustAlexForScreenSize = () => {
     let screenScale, screenPosition;
 
@@ -88,6 +101,7 @@ const Home = () => {
   const [wheyScale, wheyPosition] = adjustWheyForScreenSize();
   const [chrisScale, chrisPosition] = adjustChrisForScreenSize();
   const [alexScale, alexPosition] = adjustAlexForScreenSize();
+  const [domScale, domPosition] = adjustDomForScreenSize();
 
   return (
     <section className="w-full h-screen relative">
@@ -106,11 +120,11 @@ const Home = () => {
             <Sky isRotating={isRotating} />
             <The_First_Christmas_Tree
               position={The_First_Christmas_TreePosition}
-               scale={The_First_Christmas_TreeScale}
-               rotation={The_First_Christmas_TreeRotation}
-               isRotating={isRotating}
-                setIsRotating={setIsRotating}
-                >
+              scale={The_First_Christmas_TreeScale}
+              rotation={The_First_Christmas_TreeRotation}
+              isRotating={isRotating}
+              setIsRotating={setIsRotating}
+            >
                 
              <Alex
                isRotating={isRotating}
@@ -118,14 +132,21 @@ const Home = () => {
                 alexPosition={[2, -1, 2]}  //{/* Adjust the position relative to The_First_Christmas_Tree */}//
               />
               </The_First_Christmas_Tree>
-        
+
+            <Dom 
+              isRotating={isRotating}
+              domScale={domScale}
+              domPosition={domPosition}
+              rotation={[0, 0, 0]}
+            />
+
             <Chris
               isRotating={isRotating}
               chrisScale={chrisScale}
               chrisPosition={chrisPosition}
               rotation={[0, 0, 0]}
             />
-            <Dom />
+            
             <Bear />
             <Whey
               isRotating={isRotating}
@@ -133,6 +154,7 @@ const Home = () => {
               wheyPosition={wheyPosition}
               rotation={[0, 10, 0]}
             />
+           
             <Mail />
           </IslandGroup>
           <Alex isRotating={true} anchorPosition={[1, -1, -1]} />

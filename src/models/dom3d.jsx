@@ -3,7 +3,7 @@ import { useAnimations, useGLTF } from '@react-three/drei';
 import domScene from '../assets/3d/3d-dom.glb';
 
 
-const Dom = ({osRotating, ...props }) => {
+const Dom = ({isRotating, ...props }) => {
     const { scene, animations } = useGLTF(domScene);
     const ref = useRef();
     const { actions } = useAnimations(animations, ref);
@@ -13,12 +13,13 @@ const Dom = ({osRotating, ...props }) => {
         console.log('Model and animations are loaded:', animations);
       };
 
-      ref.current.addEcentListener('model-loaded', onAnimationsLoad);
+      ref.current.addEventListener('model-loaded', onAnimationLoad);
 
       return () => {
         ref.current.removeEventListener('model-loaded', onAnimationLoad);
       };
-    }, [ref, anumations]);
+    }, [ref, animations]);
+
     useEffect(() => {
       if (actions && actions["3d-dom"]) {
         if (isRotating) {
@@ -28,7 +29,7 @@ const Dom = ({osRotating, ...props }) => {
     }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={ref} position={[-.15, -1.1, -5.]} scale={[.18, .18, .03]}>
+    <mesh {...props} ref={ref} position={[0.5, -1, 5.75]} scale={[.48, .48, .5]}>
         <primitive object={scene} />
 
     </mesh>

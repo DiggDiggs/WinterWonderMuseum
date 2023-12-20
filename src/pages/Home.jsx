@@ -11,6 +11,7 @@ import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Dom from '../models/dom3d';
 import Whey from '../models/Whey';
 import Dragon from '../models/dragon';
+import Snow from "../models/Snow";
 
 
 const IslandGroup = ({ children, rotation }) => {
@@ -116,8 +117,10 @@ const Home = () => {
           <hemisphereLight skyColor="#b1e1ff" groundColor="#000000" intensity={1} />
 
           <IslandGroup rotation={isRotating ? [0, 0.1, 0] : [0, 0, 0]}>
-            <Dragon />
+            
             <Sky isRotating={isRotating} />
+            <Snow />
+            <Dragon />
             <The_First_Christmas_Tree
               position={The_First_Christmas_TreePosition}
               scale={The_First_Christmas_TreeScale}
@@ -129,7 +132,7 @@ const Home = () => {
              <Alex
                isRotating={isRotating}
                alexScaleScale={alexScale}
-                alexPosition={[2, -1, 2]}  //{/* Adjust the position relative to The_First_Christmas_Tree */}//
+               alexPosition={alexPosition}  //{/* Adjust the position relative to The_First_Christmas_Tree */}//
               />
               </The_First_Christmas_Tree>
 

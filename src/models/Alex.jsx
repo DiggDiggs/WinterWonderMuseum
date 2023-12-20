@@ -38,7 +38,7 @@ const Alex = ({ isRotating, ...props }) => {
 
   return (
     <group>
-      <mesh {...props} ref={ref} scale={[1, 1, 1]}>
+      <mesh {...props} ref={ref} position={[2, -4.5, -10]} scale={[2, 2, 2]}>
         <primitive object={scene} />
       </mesh>
     </group>

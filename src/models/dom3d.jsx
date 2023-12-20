@@ -29,7 +29,7 @@ const Dom = ({isRotating, ...props }) => {
     }, [actions, isRotating]);
 
   return (
-    <mesh {...props} ref={ref} position={[0.5, -1, 5.75]} scale={[.48, .48, .5]}>
+    <mesh {...props} ref={ref} position={[5, -4.5, -73]} scale={[2, 2, 2]}>
         <primitive object={scene} />
 
     </mesh>

@@ -1,3 +1,4 @@
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense, useState } from 'react';
 import Loader from '../components/Loader';
@@ -10,7 +11,6 @@ import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Whey from '../models/Whey';
 import Dom from '../models/dom3d';
 import Dragon from '../models/dragon';
-import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 
 const IslandGroup = ({ children, rotation }) => {
@@ -106,16 +106,19 @@ const Home = () => {
             <Sky isRotating={isRotating} />
             <The_First_Christmas_Tree
               position={The_First_Christmas_TreePosition}
-              scale={The_First_Christmas_TreeScale}
-              rotation={The_First_Christmas_TreeRotation}
-              isRotating={isRotating}
-              setIsRotating={setIsRotating}
-            />
-             <Alex 
-             isRotating={isRotating}
-             alexScaleScale={alexScale}
-             alexPosition={alexPosition}
-             rotation={[0, 0, 0]} />
+               scale={The_First_Christmas_TreeScale}
+               rotation={The_First_Christmas_TreeRotation}
+               isRotating={isRotating}
+                setIsRotating={setIsRotating}
+                >
+                
+             <Alex
+               isRotating={isRotating}
+               alexScaleScale={alexScale}
+                alexPosition={[2, -1, 2]}  //{/* Adjust the position relative to The_First_Christmas_Tree */}//
+              />
+              </The_First_Christmas_Tree>
+        
             <Chris
               isRotating={isRotating}
               chrisScale={chrisScale}
@@ -132,6 +135,7 @@ const Home = () => {
             />
             <Mail />
           </IslandGroup>
+          <Alex isRotating={true} anchorPosition={[1, -1, -1]} />
         </Suspense>
       </Canvas>
     </section>

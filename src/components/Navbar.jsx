@@ -8,15 +8,15 @@ const Navbar = () => {
 
   <nav className="flex text-lg gap-7 font-medium">
     <NavLink to="chris" className={({ isActive }) => (isActive ? 'text-green-700' : 'text-black')}>
-      Chris
+      Items
     </NavLink>
 
     <NavLink to="dom" className={({ isActive }) => (isActive ? 'text-green-700' : 'text-black')}>
-      Dom
+      
     </NavLink>
 
     <NavLink to="alex" className={({ isActive }) => (isActive ? 'text-green-700' : 'text-black')}>
-      Alex
+      
     </NavLink>
   </nav>
 </header>

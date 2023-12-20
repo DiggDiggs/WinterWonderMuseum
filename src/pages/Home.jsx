@@ -43,11 +43,18 @@ const Home = () => {
     return [screenScale, screenPosition];
   }
 
+  const adjust_TestALEX_ForScreenSize = () => {
+    let screenScale = null;
+    let screenPosition = [0.0, -3, -3];
+
+    return [screenScale, screenPosition];
+  }
+
   const adjustWheyForScreenSize = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [3, 1.5, 1.5];
       screenPosition = [0, -1.5, 0];
     } else {
       screenScale = [3, 3, 3];
@@ -61,11 +68,11 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [3, 5, 3];
       screenPosition = [0, -1.5, 0];
     } else {
-      screenScale = [3, 3, 3];
-      screenPosition = [0, -4, -4];
+      screenScale = [4, 4, 4];
+      screenPosition = [0, -5, -5];
     }
 
     return [screenScale, screenPosition];
@@ -74,7 +81,7 @@ const Home = () => {
     let screenScale, screenPosition;
 
     if (window.innerWidth < 768) {
-      screenScale = [1.5, 1.5, 1.5];
+      screenScale = [1.5, 1.5, 3];
       screenPosition = [0, -1, 0];
     } else {
       screenScale = [3, 3, 3];
@@ -102,6 +109,7 @@ const Home = () => {
   const [wheyScale, wheyPosition] = adjustWheyForScreenSize();
   const [chrisScale, chrisPosition] = adjustChrisForScreenSize();
   const [alexScale, alexPosition] = adjustAlexForScreenSize();
+  const [tlexScale, tlexPosition] = adjust_TestALEX_ForScreenSize();
   const [domScale, domPosition] = adjustDomForScreenSize();
 
   return (
@@ -128,13 +136,15 @@ const Home = () => {
               isRotating={isRotating}
               setIsRotating={setIsRotating}
             >
-                
+                <Alex position={tlexPosition}
+                scale={tlexScale}></Alex>
+
              <Alex
                isRotating={isRotating}
                alexScaleScale={alexScale}
                alexPosition={alexPosition}  //{/* Adjust the position relative to The_First_Christmas_Tree */}//
               />
-              </The_First_Christmas_Tree>
+            </The_First_Christmas_Tree>
 
             <Dom 
               isRotating={isRotating}

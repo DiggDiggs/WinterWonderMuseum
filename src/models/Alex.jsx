@@ -36,10 +36,9 @@ const Alex = ({ isRotating, ...props }) => {
     }, [actions, isRotating]); 
   
     return (
-      <mesh {...props} position={[-1, -2, -3]} scale={[.5, .5,.5]}>
-        <primitive object={scene} />
-
-    </mesh>
+      <mesh {...props} ref={ref} position={[3, 1, -1]} scale={[1, 1, 1]}>
+      <primitive object={scene} />
+    </mesh> 
   )
 }
 

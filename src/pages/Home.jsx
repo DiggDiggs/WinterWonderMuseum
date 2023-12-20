@@ -1,4 +1,4 @@
-import { Canvas } from '@react-three/fiber';
+import { Canvas, useThree } from '@react-three/fiber';
 import { Suspense, useState } from 'react';
 import Loader from '../components/Loader';
 import Alex from '../models/Alex.jsx';
@@ -10,14 +10,20 @@ import The_First_Christmas_Tree from '../models/The_First_Christmas_Tree';
 import Whey from '../models/Whey';
 import Dom from '../models/dom3d';
 import Dragon from '../models/dragon';
+import { OrbitControls, PerspectiveCamera } from "@react-three/drei";
 
 
 const IslandGroup = ({ children, rotation }) => {
   return (
-    <group rotation={rotation}>
+    <group rotation={rotation} position={[0, 0, 65]}>
       {children}
     </group>
   );
+};
+
+const Controls = () => {
+  const {camera, gl: { domElement } } = useThree();
+  return <OrbitControls args={[camera, domElement]} />;
 };
 
 const Home = () => {
@@ -86,6 +92,8 @@ const Home = () => {
   return (
     <section className="w-full h-screen relative">
       <Canvas className={`w-full h-screen bg-transparent ${isRotating ? 'cursor-grabbing' : 'cursor-grab'}`} camera={{ near: 0.1, far: 1000 }}>
+        <PerspectiveCamera makeDefault position={[0, 0, 10]} />
+        <Controls />
         <Suspense fallback={<Loader />}>
           <directionalLight position={[1, 1, 1]} intensity={2} />
           <ambientLight intensity={0.5} />

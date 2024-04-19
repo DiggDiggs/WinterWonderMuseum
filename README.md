@@ -1,9 +1,11 @@
 # Winter Wonder Museum
 
-![Winter Wonder Museum Screenshot](screenshot.png)
+![Winter Wonder Museum Screenshot]
 
 ## About the Developer
-Hello there! I'm [Your Name](linkedin.com/in/yourname), an enthusiastic developer with a passion for creating immersive experiences that captivate audiences of all ages. With a background in [relevant field], I combine my technical expertise with a creative flair to bring unique ideas to life. Let's connect on [LinkedIn](linkedin.com/in/yourname) and explore more of my projects on [GitHub](github.com/yourusername).
+Hello there! I'm Christopher Diggs, an enthusiastic developer with a passion for creating immersive experiences that captivate audiences of all ages. With a background in [relevant field], I combine my technical expertise with a creative flair to bring unique ideas to life. Let's connect on [LinkedIn]www.linkedin.com/in/christopher-a-diggs-
+
+ and explore more of my projects on [GitHub](https://github.com/DiggDiggs).
 
 ## Embark on a Journey Through Winter Wonder Museum
 Welcome, one and all, to the Winter Wonder Museum – an enchanting world unlike any other you've experienced before. Prepare to be transported to a realm where imagination knows no bounds and every corner reveals a new delight. Powered by React, Vite, Three.js, Tailwind CSS, and Firebase, this museum combines cutting-edge technology with timeless charm to offer an unforgettable adventure for visitors of all ages.
@@ -37,4 +39,3 @@ Building the Winter Wonder Museum posed its fair share of challenges, from optim
 Step into the Winter Wonder Museum and embark on a journey where imagination knows no bounds. With its blend of technology, creativity, and wonder, this museum promises an unforgettable adventure for all who dare to explore its enchanting halls.
 
 [Watch the Winter Wonder Museum Trailer on YouTube](https://www.youtube.com/watch?v=1D4dYOp_xTk)
-

@@ -1,9 +1,8 @@
 # Winter Wonder Museum
 
-![Winter Wonder Museum Screenshot]
 
 ## About the Developer
-Hello there! I'm Christopher Diggs, an enthusiastic developer with a passion for creating immersive experiences that captivate audiences of all ages. With a background in [relevant field], I combine my technical expertise with a creative flair to bring unique ideas to life. Let's connect on [LinkedIn]www.linkedin.com/in/christopher-a-diggs-
+Hello there! I'm Christopher Diggs, an enthusiastic developer with a passion for creating immersive experiences that captivate audiences of all ages. With a background in [relevant field], I combine my technical expertise with a creative flair to bring unique ideas to life. Let's connect on [LinkedIn](www.linkedin.com/in/christopher-a-diggs-)
 
  and explore more of my projects on [GitHub](https://github.com/DiggDiggs).
 

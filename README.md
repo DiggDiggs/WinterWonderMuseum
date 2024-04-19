@@ -1,5 +1,6 @@
 # Winter Wonder Museum
 
+![mq2](https://github.com/DiggDiggs/WinterWonderMuseum/assets/65854363/fbab913d-8cfa-4198-966e-c18d33db42a8)
 
 ## About the Developer
 Hello there! I'm Christopher Diggs, an enthusiastic developer with a passion for creating immersive experiences that captivate audiences of all ages. With a background in [relevant field], I combine my technical expertise with a creative flair to bring unique ideas to life. Let's connect on [LinkedIn](www.linkedin.com/in/christopher-a-diggs-)
